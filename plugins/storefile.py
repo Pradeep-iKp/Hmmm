@@ -6,7 +6,7 @@ from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 from config import *
 
 
-@Client.on_message(filter.command(['link', 'store']) & ~filters.edited)
+@Client.on_message(filters.command(['link', 'store']) & ~filters.edited)
 async def storefile(bot, message):
     replied = message.reply_to_message
     if not replied:
